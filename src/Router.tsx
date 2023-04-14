@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import { LoginPage } from "./pages/LoginPage";
+import { TaskPage } from "./pages/TaskPage";
 
 export const router = createBrowserRouter([
   {
     path: "",
-    element: <div> hola</div>,
+    element: <TaskPage />,
   },
   {
     path: "/login",
