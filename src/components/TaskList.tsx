@@ -37,7 +37,6 @@ const Task = ({ id, name, isCompleted, createdAt }: TaskType) => {
 
       refresh();
     } catch (error) {
-            
       if (axios.isAxiosError(error)) {
         if (error.response?.status == 403) {
           toast({
@@ -46,7 +45,8 @@ const Task = ({ id, name, isCompleted, createdAt }: TaskType) => {
             isClosable: true,
           });
         }
-        }
+      }
+    }
   };
 
   // elimina la tarea
@@ -72,14 +72,7 @@ const Task = ({ id, name, isCompleted, createdAt }: TaskType) => {
       // refresca los datos
       refresh();
     } catch (error) {
-      if (axios.isAxiosError(error)) {
-        if (error.response?.status == 403) {
-          toast({
-            description: "the token has expired",
-            status: "error",
-            isClosable: true,
-          });
-        }
+      console.log("error");
     }
   };
   return (

@@ -53,7 +53,7 @@ export const AddModalTask = ({ isOpen, onClose }: addModalTaskProps) => {
       refresh();
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        if (error.response?.status == 403) {
+        if (error.response?.status == 401) {
           toast({
             description: "the token has expired",
             status: "error",

@@ -26,9 +26,7 @@ export const TaskPage = () => {
           },
         });
         setTasks(response.data || []);
-      } catch (error) {
-        console.log(error);
-      }
+      } catch (error) {}
     });
 
     return () => clearTimeout(timeout);
