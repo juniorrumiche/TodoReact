@@ -64,6 +64,7 @@ const Task = ({ id, name, isCompleted, createdAt }: TaskType) => {
 
       // tmuestra mensaje que se elimno
       toast({
+        colorScheme: "red",
         status: "error",
         description: "successfully removed",
         isClosable: true,
@@ -75,6 +76,7 @@ const Task = ({ id, name, isCompleted, createdAt }: TaskType) => {
       console.log("error");
     }
   };
+
   return (
     <Box>
       <Flex alignItems="center" justifyContent="space-between">

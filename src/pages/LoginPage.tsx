@@ -7,6 +7,7 @@ import {
   useColorMode,
   useColorModeValue,
   IconButton,
+  useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
 import Cookies from "js-cookie";
@@ -26,6 +27,7 @@ export const LoginPage = () => {
 
   const [username, setUsername] = useState("");
   const [pwd, setPwd] = useState("");
+  const toast = useToast();
 
   // login with api
   const loginAPI = async (username: string, password: string) => {
@@ -50,7 +52,13 @@ export const LoginPage = () => {
     } catch (error) {
       // manejo de errores
       if (axios.isAxiosError(error)) {
-        console.log(error.response?.data);
+        toast({
+          position: "top",
+          colorScheme: "red",
+          status: "error",
+          description: error.response?.data.error,
+          isClosable: true,
+        });
       }
     }
   };

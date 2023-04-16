@@ -92,7 +92,7 @@ export const AddModalTask = ({ isOpen, onClose }: addModalTaskProps) => {
                 await saveTask();
                 setLoading(false);
               }}
-              colorScheme="blue"
+              colorScheme="teal"
               mr={3}
             >
               Guardar
